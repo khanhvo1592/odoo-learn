@@ -1,0 +1,48 @@
+<odoo>
+    <data>
+        <!-- Tree View -->
+        <record id="view_tv_schedule_tree" model="ir.ui.view">
+            <field name="name">tv.schedule.tree</field>
+            <field name="model">tv.schedule</field>
+            <field name="arch" type="xml">
+                <tree string="TV Schedule">
+                    <field name="name"/>
+                    <field name="broadcast_date"/>
+                    <field name="start_time"/>
+                    <field name="end_time"/>
+                    <field name="channel"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form View -->
+        <record id="view_tv_schedule_form" model="ir.ui.view">
+            <field name="name">tv.schedule.form</field>
+            <field name="model">tv.schedule</field>
+            <field name="arch" type="xml">
+                <form string="TV Schedule">
+                    <group>
+                        <field name="name"/>
+                        <field name="broadcast_date"/>
+                        <field name="start_time"/>
+                        <field name="end_time"/>
+                        <field name="channel"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_tv_schedule" model="ir.actions.act_window">
+            <field name="name">TV Schedules</field>
+            <field name="res_model">tv.schedule</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Menu Root -->
+        <menuitem id="menu_tv_schedule_root" name="TV Schedule" sequence="1"/>
+
+        <!-- Menu Item -->
+        <menuitem id="menu_tv_schedule" name="TV Schedules" parent="menu_tv_schedule_root" action="action_tv_schedule"/>
+    </data>
+</odoo>

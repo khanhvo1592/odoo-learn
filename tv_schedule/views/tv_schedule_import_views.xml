@@ -1,0 +1,32 @@
+<odoo>
+    <data>
+        <!-- Import Wizard -->
+        <record id="view_tv_schedule_import_wizard" model="ir.ui.view">
+            <field name="name">tv.schedule.import.wizard.form</field>
+            <field name="model">tv.schedule.import.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Import TV Schedule">
+                    <group>
+                        <field name="file"/>
+                        <field name="filename"/>
+                    </group>
+                    <footer>
+                        <button string="Import" type="object" name="import_file" class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <!-- Action for Import Wizard -->
+        <record id="action_tv_schedule_import" model="ir.actions.act_window">
+            <field name="name">Import TV Schedule</field>
+            <field name="res_model">tv.schedule.import.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <!-- Menu Item for Import Wizard -->
+        <menuitem id="menu_tv_schedule_import" name="Import TV Schedule" parent="menu_tv_schedule_root" action="action_tv_schedule_import"/>
+    </data>
+</odoo>
